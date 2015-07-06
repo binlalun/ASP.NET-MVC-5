@@ -177,6 +177,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomBankController.cs" />
+    <Compile Include="Controllers\CustomContactController.cs" />
     <Compile Include="Controllers\CustomDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -296,6 +298,16 @@
     <Content Include="Views\CustomData\Details.cshtml" />
     <Content Include="Views\CustomData\Edit.cshtml" />
     <Content Include="Views\CustomData\Index.cshtml" />
+    <Content Include="Views\CustomContact\Create.cshtml" />
+    <Content Include="Views\CustomContact\Delete.cshtml" />
+    <Content Include="Views\CustomContact\Details.cshtml" />
+    <Content Include="Views\CustomContact\Edit.cshtml" />
+    <Content Include="Views\CustomContact\Index.cshtml" />
+    <Content Include="Views\CustomBank\Create.cshtml" />
+    <Content Include="Views\CustomBank\Delete.cshtml" />
+    <Content Include="Views\CustomBank\Details.cshtml" />
+    <Content Include="Views\CustomBank\Edit.cshtml" />
+    <Content Include="Views\CustomBank\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
