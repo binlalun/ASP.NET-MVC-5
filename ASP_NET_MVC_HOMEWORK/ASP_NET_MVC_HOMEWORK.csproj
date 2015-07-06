@@ -182,6 +182,7 @@
     <Compile Include="Controllers\CustomDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,6 +205,9 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>CustomModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View1.cs">
       <DependentUpon>CustomModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\客戶聯絡人.cs">
@@ -308,6 +312,11 @@
     <Content Include="Views\CustomBank\Details.cshtml" />
     <Content Include="Views\CustomBank\Edit.cshtml" />
     <Content Include="Views\CustomBank\Index.cshtml" />
+    <Content Include="Views\Report\Create.cshtml" />
+    <Content Include="Views\Report\Delete.cshtml" />
+    <Content Include="Views\Report\Details.cshtml" />
+    <Content Include="Views\Report\Edit.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

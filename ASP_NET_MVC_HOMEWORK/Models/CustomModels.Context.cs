@@ -29,5 +29,6 @@ namespace ASP_NET_MVC_HOMEWORK.Models
         public virtual DbSet<客戶資料> 客戶資料 { get; set; }
         public virtual DbSet<客戶銀行資訊> 客戶銀行資訊 { get; set; }
         public virtual DbSet<客戶聯絡人> 客戶聯絡人 { get; set; }
+        public virtual DbSet<View1> View1 { get; set; }
     }
 }

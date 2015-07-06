@@ -18,7 +18,7 @@ namespace ASP_NET_MVC_HOMEWORK.Controllers
         public ActionResult Index()
         {
             var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料);
-            return View(客戶銀行資訊.ToList());
+            return View(客戶銀行資訊.Where(客 => 客.fbDELETE == false).ToList());
         }
 
         // GET: CustomBank/Details/5
@@ -115,7 +115,8 @@ namespace ASP_NET_MVC_HOMEWORK.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             客戶銀行資訊 客戶銀行資訊 = db.客戶銀行資訊.Find(id);
-            db.客戶銀行資訊.Remove(客戶銀行資訊);
+            //db.客戶銀行資訊.Remove(客戶銀行資訊);
+            客戶銀行資訊.fbDELETE = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -17,7 +17,7 @@ namespace ASP_NET_MVC_HOMEWORK.Controllers
         // GET: CustomData
         public ActionResult Index()
         {
-            return View(db.客戶資料.ToList());
+            return View(db.客戶資料.Where(c => c.fbDELETE == false).ToList());
         }
 
         // GET: CustomData/Details/5
@@ -109,8 +109,10 @@ namespace ASP_NET_MVC_HOMEWORK.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            //客戶資料 客戶資料 = db.客戶資料.Find(id);
+            //db.客戶資料.Remove(客戶資料);
             客戶資料 客戶資料 = db.客戶資料.Find(id);
-            db.客戶資料.Remove(客戶資料);
+            客戶資料.fbDELETE = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

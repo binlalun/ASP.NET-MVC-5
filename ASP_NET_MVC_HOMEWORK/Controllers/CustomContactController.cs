@@ -18,7 +18,7 @@ namespace ASP_NET_MVC_HOMEWORK.Controllers
         public ActionResult Index()
         {
             var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料);
-            return View(客戶聯絡人.ToList());
+            return View(客戶聯絡人.Where(客 => 客.fbDELETE == false).ToList());
         }
 
         // GET: CustomContact/Details/5
@@ -115,7 +115,8 @@ namespace ASP_NET_MVC_HOMEWORK.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             客戶聯絡人 客戶聯絡人 = db.客戶聯絡人.Find(id);
-            db.客戶聯絡人.Remove(客戶聯絡人);
+            客戶聯絡人.fbDELETE = true;
+            //db.客戶聯絡人.Remove(客戶聯絡人);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
