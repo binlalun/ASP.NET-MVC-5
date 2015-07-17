@@ -4,7 +4,7 @@ namespace ASP_NET_MVC_HOMEWORK.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Data.SqlClient;
-
+    using System.Linq;
     [MetadataType(typeof(客戶聯絡人MetaData))]
     public partial class 客戶聯絡人 : IValidatableObject
     {
@@ -17,12 +17,10 @@ namespace ASP_NET_MVC_HOMEWORK.Models
 
             using (var db = new CustomEntities())
             {
-                
-                
-                //var custcontact = db.客戶聯絡人.SqlQuery("select Id from 客戶聯絡人 where 客戶Id = @客戶Id and Email = @Email",
-                //    new SqlParameter("@客戶Id",this.客戶Id),    
-                //    new SqlParameter("@Email",this.Email)).;
-                //if(custcontact != null && custcontact.Result.Count > 0)
+
+                var custcontact = db.客戶聯絡人.Where(客 => 客.客戶Id == this.客戶Id && 客.Email == this.Email).Count();
+
+                if(custcontact > 0)
                     yield return new ValidationResult("該客戶Id的Email重複!", new[] { "Email" });
 
             }
